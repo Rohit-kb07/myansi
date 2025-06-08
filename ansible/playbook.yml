@@ -6,7 +6,7 @@
       copy:
         src: "/var/snap/jenkins/4865/workspace/myansi/target/myansi.war"
         dest: "/opt/tomcat/webapps/myansi.war"
-        remote_src: yes
+        remote_src: no
 
     - name: Restart Tomcat
       systemd:
