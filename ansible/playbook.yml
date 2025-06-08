@@ -7,5 +7,9 @@
         src: "/var/snap/jenkins/4865/workspace/myansi/target/myansi.war"
         dest: "/opt/tomcat/webapps/"
         remote_src: no
+    - name: restart tomcat
+      systemd:
+          name: tomcat
+          state: restarted
 
     
