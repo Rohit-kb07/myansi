@@ -5,7 +5,7 @@
     - name: Copy WAR file to Tomcat
       copy:
         src: "/var/snap/jenkins/4865/workspace/myansi/target/myansi.war"
-        dest: "/opt/tomcat/webapps/"
+        dest: "/opt/tomcat/webapps/myansi.war"
         remote_src: no
     - name: restart tomcat
       systemd:
