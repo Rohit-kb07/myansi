@@ -21,11 +21,7 @@ pipeline {
                 sh 'mvn clean package'  // Run Maven build
             }
         }
-        stage('test') {
-            steps {
-                sh 'mvn test'  // Run Maven build
-            }
-        }
+       
 
      stage('Archive') {
             steps {
@@ -34,8 +30,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               sh 'mvn clean package'  
-               ansiblePlaybook playbook:'ansible/playbook.yml', inventory:'ansible/hosts.ini'
+               sh 'mvn clean install'  
+               sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
             }
         }
 
